@@ -1,4 +1,4 @@
-import { toaster } from "@/components/ui/toaster";
+import { toaster } from "@/components/ui/toaster-instance";
 import { getErrorMessage } from "@/utils/handle-error";
 import { MutationCache, QueryClient } from "@tanstack/react-query";
 import type {
