@@ -1,0 +1,21 @@
+echo "🚀 Running pre-commit checks..."
+
+# Format all files
+echo "📝 Running format..."
+yarn run format
+
+# Lint
+echo "📝 Running lint..."
+yarn lint
+
+# Generate theme typings
+echo "🔍 Generating theme typings..."
+yarn run gen:theme-typings
+
+# Type checking
+echo "🔍 Running type checks..."
+yarn check-types
+
+git add -A .
+
+echo "✅ Pre-commit checks completed successfully!"
