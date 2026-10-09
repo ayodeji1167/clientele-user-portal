@@ -1,3 +1,13 @@
+/* Overused Grotesk variable font (weights 300-900), self-hosted.
+   Source: https://github.com/RandomMaerks/Overused-Grotesk (SIL OFL). */
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-VF.woff2") format("woff2-variations");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }

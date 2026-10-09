@@ -1,6 +1,7 @@
 import { createSystem, defaultConfig } from "@chakra-ui/react";
 import { fonts, textStyles } from "./custom/font";
-import { colors } from "./custom/color";
+import { colors, semanticColors } from "./custom/color";
+import { shadows, blurs } from "./custom/effect";
 import { buttonRecipe } from "./recipe";
 
 export const system = createSystem(defaultConfig, {
@@ -11,7 +12,9 @@ export const system = createSystem(defaultConfig, {
       margin: 0,
       padding: 0,
       fontFamily: "body",
-      background: "rgba(255, 255, 255, 1)",
+      letterSpacing: "-0.03em",
+      color: "text.primary",
+      background: "bg.secondary",
       scrollBehavior: "smooth",
       overscrollBehaviorY: "none",
     },
@@ -21,6 +24,11 @@ export const system = createSystem(defaultConfig, {
     tokens: {
       fonts: fonts,
       colors: colors,
+      shadows: shadows,
+      blurs: blurs,
+    },
+    semanticTokens: {
+      colors: semanticColors,
     },
     recipes: {
       button: buttonRecipe,
