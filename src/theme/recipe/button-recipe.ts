@@ -1,8 +1,9 @@
 import { defineRecipe } from "@chakra-ui/react";
 
 // Button spec from the Clientele design system (design/figma/TOKENS.md §6):
-// 5 variants × 5 sizes × states. All sizes share gap 5px, T/B padding 14px,
-// radius 8px; only L/R padding scales.
+// 5 variants × 5 sizes × states. All sizes share gap 5px and radius 8px.
+// Heights are explicit because the screen mockups (40px at md) don't match
+// the spec sheet's 14px vertical padding; the mockups win.
 export const buttonRecipe = defineRecipe({
   base: {
     display: "inline-flex",
@@ -11,7 +12,7 @@ export const buttonRecipe = defineRecipe({
     gap: "5px",
     borderRadius: "8px",
     fontFamily: "body",
-    fontWeight: "500",
+    fontWeight: "600",
     letterSpacing: "-0.03em",
     cursor: "pointer",
     transitionProperty: "background, border-color, color, box-shadow",
@@ -23,7 +24,7 @@ export const buttonRecipe = defineRecipe({
   variants: {
     variant: {
       primary: {
-        bg: "sandal.600",
+        bg: "sandal.700",
         color: "white",
         _hover: { bg: "sandal.800" },
         _active: { bg: "sandal.900" },
@@ -73,7 +74,7 @@ export const buttonRecipe = defineRecipe({
       },
       social: {
         bg: "bg.secondary",
-        color: "text.primary",
+        color: "text.secondary",
         borderWidth: "1px",
         borderColor: "border.primary",
         _hover: { bg: "bg.primary" },
@@ -86,11 +87,11 @@ export const buttonRecipe = defineRecipe({
       },
     },
     size: {
-      xs: { px: "8px", py: "14px", fontSize: "12px" },
-      sm: { px: "10px", py: "14px", fontSize: "14px" },
-      md: { px: "16px", py: "14px", fontSize: "15px" },
-      lg: { px: "20px", py: "14px", fontSize: "16px" },
-      xl: { px: "24px", py: "14px", fontSize: "18px" },
+      xs: { h: "32px", px: "8px", py: "0", fontSize: "13px" },
+      sm: { h: "36px", px: "10px", py: "0", fontSize: "14px" },
+      md: { h: "40px", px: "16px", py: "0", fontSize: "15px" },
+      lg: { h: "44px", px: "20px", py: "0", fontSize: "16px" },
+      xl: { h: "48px", px: "24px", py: "0", fontSize: "18px" },
     },
   },
   defaultVariants: {

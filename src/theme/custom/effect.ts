@@ -26,21 +26,23 @@ export const shadows = {
     3: { value: "8px 8px 24px 0 rgba(0, 0, 0, 0.12)" },
     4: { value: "0 0 28px 6px rgba(0, 0, 0, 0.12)" },
   },
+  // Figma lists effect layers bottom-first; CSS paints the first shadow on
+  // top, so the 2px white gap must come before the 3px colored ring.
   ring: {
     focusPrimary: {
       value:
-        "0 0 0 3px rgba(54, 45, 166, 1), 0 0 0 2px rgba(255, 255, 255, 1), inset 0 0 0 1px rgba(54, 45, 166, 1)",
+        "0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(54, 45, 166, 1), inset 0 0 0 1px rgba(54, 45, 166, 1)",
     },
     error: {
-      value: "0 0 0 3px rgba(183, 30, 30, 1), 0 0 0 2px rgba(255, 255, 255, 1)",
+      value: "0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(183, 30, 30, 1)",
     },
     focusNeutral: {
       value:
-        "0 0 0 3px rgba(118, 118, 118, 1), 0 0 0 2px rgba(255, 255, 255, 1), inset 0 0 0 1px rgba(230, 230, 230, 1)",
+        "0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(118, 118, 118, 1), inset 0 0 0 1px rgba(230, 230, 230, 1)",
     },
     success: {
       value:
-        "0 0 0 3px rgba(45, 140, 47, 1), 0 0 0 2px rgba(255, 255, 255, 1), inset 0 0 0 1px rgba(230, 230, 230, 1)",
+        "0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(45, 140, 47, 1), inset 0 0 0 1px rgba(230, 230, 230, 1)",
     },
   },
 };

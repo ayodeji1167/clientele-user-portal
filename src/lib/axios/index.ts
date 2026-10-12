@@ -1,5 +1,9 @@
 import Axios from "axios";
-import { authRequestInterceptor, rejectErrorInterceptor } from "./interceptors";
+import {
+  authRequestInterceptor,
+  expiredSessionInterceptor,
+  rejectErrorInterceptor,
+} from "./interceptors";
 import { env } from "@/shared/constants/env";
 
 export const axios = Axios.create({
@@ -11,3 +15,4 @@ export const axios = Axios.create({
 });
 
 axios.interceptors.request.use(authRequestInterceptor, rejectErrorInterceptor);
+axios.interceptors.response.use(undefined, expiredSessionInterceptor);

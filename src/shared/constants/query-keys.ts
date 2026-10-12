@@ -5,4 +5,6 @@
  *   clients: { getAll: "clients-get-all", getById: "clients-get-by-id" },
  * };
  */
-export const queryKey = {};
+export const queryKey = {
+  auth: { me: "auth-me" },
+};

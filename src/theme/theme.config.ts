@@ -12,7 +12,9 @@ export const system = createSystem(defaultConfig, {
       margin: 0,
       padding: 0,
       fontFamily: "body",
-      letterSpacing: "-0.03em",
+      // Regular-weight copy in the mockups tracks at -1.5%; medium and
+      // heavier text (headings, labels, buttons) sets -3% itself.
+      letterSpacing: "-0.015em",
       color: "text.primary",
       background: "bg.secondary",
       scrollBehavior: "smooth",

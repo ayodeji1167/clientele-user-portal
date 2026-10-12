@@ -1,15 +1,38 @@
 import { type RouteObject } from "react-router-dom";
 import { BaseApp } from "./BaseApp";
 import { NotFound, RouteError } from "@/components/error";
+import { GuestOnly, RequireAuth } from "@/components/hoc";
+import {
+  authCallbackRoutes,
+  guestAuthRoutes,
+  protectedAuthRoutes,
+} from "@/features/auth/routes";
 
-// Feature routes (e.g. auth, dashboard) get added as children here as the
-// features are built.
 export const RoutesList: RouteObject[] = [
   {
     path: "",
     element: <BaseApp />,
     errorElement: <RouteError />,
-    children: [],
+    children: [
+      {
+        element: <GuestOnly />,
+        children: guestAuthRoutes,
+      },
+      ...authCallbackRoutes,
+      {
+        element: <RequireAuth />,
+        children: [
+          {
+            index: true,
+            lazy: () =>
+              import("@/features/dashboard/pages/HomePage").then((m) => ({
+                Component: m.HomePage,
+              })),
+          },
+          ...protectedAuthRoutes,
+        ],
+      },
+    ],
   },
   {
     path: "*",

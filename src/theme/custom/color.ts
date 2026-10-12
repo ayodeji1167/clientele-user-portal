@@ -93,6 +93,11 @@ export const semanticColors = {
     tertiary: { value: "{colors.neutral.600}" },
     inverse: { value: "{colors.neutral.100}" },
     placeholder: { value: "{colors.neutral.500}" },
+    // Subdued text group from the Color page (#767676 / #A5A5A5), used for
+    // subtitles, secondary copy and fine print.
+    muted: { value: "{colors.neutral.500}" },
+    subtle: { value: "{colors.neutral.400}" },
+    error: { value: "{colors.error.600}" },
   },
   bg: {
     primary: { value: "{colors.neutral.50}" },
