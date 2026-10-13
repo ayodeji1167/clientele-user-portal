@@ -2,7 +2,7 @@ import { Button, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { OtpInput } from "@/components/input";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { useResendVerification, useVerifyEmail } from "../api/auth.hooks";
 import {
   AuthHeader,
@@ -25,7 +25,7 @@ export function VerifyEmailPage() {
   const [incomplete, setIncomplete] = useState(false);
 
   if (!email) {
-    return <Navigate to={appRoutes.auth.register} replace />;
+    return <Navigate to={RouteConstants.auth.signup.path} replace />;
   }
 
   const submit = (value: string) => {
@@ -36,13 +36,16 @@ export function VerifyEmailPage() {
     }
     verify.mutate(
       { email, code: value },
-      { onSuccess: () => navigate(appRoutes.welcome, { replace: true }) },
+      {
+        onSuccess: () =>
+          navigate(RouteConstants.onboarding.welcome.path, { replace: true }),
+      },
     );
   };
 
   return (
     <AuthLayout centered>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader
           title="Verify your email"
           subtitle={
@@ -63,7 +66,7 @@ export function VerifyEmailPage() {
             submit(code);
           }}
         >
-          <Stack gap="32px">
+          <Stack gap="2rem">
             <OtpInput
               value={code}
               onChange={(value) => {
@@ -76,7 +79,7 @@ export function VerifyEmailPage() {
               disabled={verify.isPending}
             />
 
-            <Stack gap="14px">
+            <Stack gap="0.875rem">
               <Button type="submit" w="full" loading={verify.isPending}>
                 Continue
               </Button>
@@ -90,7 +93,7 @@ export function VerifyEmailPage() {
                     Resend email
                   </TextLink>
                 </AuthPromptLine>
-                <TextLink tone="neutral" to={appRoutes.auth.register}>
+                <TextLink tone="neutral" to={RouteConstants.auth.signup.path}>
                   Go back
                 </TextLink>
               </AuthPrompt>

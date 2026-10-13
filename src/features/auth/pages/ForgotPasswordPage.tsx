@@ -1,7 +1,7 @@
 import { Button, Stack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { FormField, TextInput } from "@/components/input";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { fieldError } from "@/utils/form";
 import { useForgotPassword } from "../api/auth.hooks";
 import {
@@ -11,7 +11,7 @@ import {
   AuthPromptLine,
   TextLink,
 } from "../components";
-import { emailSchema } from "../validation";
+import { emailSchema } from "../utils/validation";
 
 export function ForgotPasswordPage() {
   const forgotPassword = useForgotPassword();
@@ -24,15 +24,15 @@ export function ForgotPasswordPage() {
 
   return (
     <AuthLayout>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader
           title="Reset your password"
           subtitle="We’ll send a reset link to the email associated with your Clientele account"
         />
 
-        <Stack gap="14px">
+        <Stack gap="0.875rem">
           <form noValidate onSubmit={formik.handleSubmit}>
-            <Stack gap="32px">
+            <Stack gap="2rem">
               <FormField
                 label="Email address"
                 required
@@ -61,7 +61,7 @@ export function ForgotPasswordPage() {
                 Resend email
               </TextLink>
             </AuthPromptLine>
-            <TextLink tone="neutral" to={appRoutes.auth.login}>
+            <TextLink tone="neutral" to={RouteConstants.auth.secureLink.path}>
               Sign in with a secure link instead
             </TextLink>
           </AuthPrompt>

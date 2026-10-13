@@ -1,5 +1,5 @@
 import type { AxiosError, InternalAxiosRequestConfig } from "axios";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { clearStoredToken, getStoredToken } from "@/utils/storage";
 
 export function authRequestInterceptor(config: InternalAxiosRequestConfig) {
@@ -22,7 +22,7 @@ export function rejectErrorInterceptor(error: unknown) {
 export function expiredSessionInterceptor(error: AxiosError) {
   if (error.response?.status === 401 && error.config?.headers?.Authorization) {
     clearStoredToken();
-    window.location.replace(appRoutes.auth.login);
+    window.location.replace(RouteConstants.auth.login.path);
   }
   return Promise.reject(error);
 }

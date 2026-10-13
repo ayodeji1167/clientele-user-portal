@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 /** The centered footer lines under an auth form's primary button. */
 export function AuthPrompt({ children }: { children: ReactNode }) {
   return (
-    <Stack gap="11px" align="center" fontSize="15px" lineHeight="1.1">
+    <Stack gap="0.6875rem" align="center" fontSize="0.9375rem" lineHeight="1.1">
       {children}
     </Stack>
   );

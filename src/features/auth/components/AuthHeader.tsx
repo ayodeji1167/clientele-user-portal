@@ -8,7 +8,7 @@ type AuthHeaderProps = {
 
 export function AuthHeader({ title, subtitle }: AuthHeaderProps) {
   return (
-    <Stack gap="6px" textAlign="center">
+    <Stack gap="0.375rem" textAlign="center">
       <Heading
         as="h1"
         textStyle="h5"
@@ -19,7 +19,12 @@ export function AuthHeader({ title, subtitle }: AuthHeaderProps) {
         {title}
       </Heading>
       {subtitle && (
-        <Text fontSize="16px" lineHeight="18px" color="text.muted" pb="4px">
+        <Text
+          fontSize="1rem"
+          lineHeight="1.125rem"
+          color="text.muted"
+          pb="0.25rem"
+        >
           {subtitle}
         </Text>
       )}

@@ -4,9 +4,9 @@ import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormField, PasswordInput, TextInput } from "@/components/input";
 import { legalLinks } from "@/shared/constants/legal";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { fieldError } from "@/utils/form";
-import { useRegister } from "../api/auth.hooks";
+import { useSignup } from "../api/auth.hooks";
 import {
   AuthHeader,
   AuthLayout,
@@ -15,7 +15,7 @@ import {
   SocialAuthButtons,
   TextLink,
 } from "../components";
-import { registerSchema } from "../validation";
+import { signupSchema } from "../utils/validation";
 
 function LegalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -26,7 +26,7 @@ function LegalLink({ href, children }: { href: string; children: ReactNode }) {
       display="inline"
       color="inherit"
       textDecoration="underline"
-      textUnderlineOffset="2px"
+      textUnderlineOffset="0.125rem"
       _hover={{ color: "text.tertiary" }}
     >
       {children}
@@ -34,9 +34,9 @@ function LegalLink({ href, children }: { href: string; children: ReactNode }) {
   );
 }
 
-export function RegisterPage() {
+export function SignupPage() {
   const navigate = useNavigate();
-  const register = useRegister();
+  const signup = useSignup();
 
   const formik = useFormik({
     initialValues: {
@@ -45,16 +45,14 @@ export function RegisterPage() {
       password: "",
       confirmPassword: "",
     },
-    validationSchema: registerSchema,
+    validationSchema: signupSchema,
     onSubmit: (values) => {
       const email = values.email.trim();
-      register.mutate(
+      signup.mutate(
         { fullName: values.fullName.trim(), email, password: values.password },
         {
           onSuccess: () =>
-            navigate(
-              `${appRoutes.auth.verifyEmail}?email=${encodeURIComponent(email)}`,
-            ),
+            navigate(RouteConstants.auth.verifyEmail.generate({}, { email })),
         },
       );
     },
@@ -62,14 +60,14 @@ export function RegisterPage() {
 
   return (
     <AuthLayout>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader title="Create a new account" />
 
-        <Stack gap="14px">
+        <Stack gap="0.875rem">
           <form noValidate onSubmit={formik.handleSubmit}>
-            <Stack gap="28px">
-              <Stack gap="22px">
-                <Stack gap="11px">
+            <Stack gap="1.75rem">
+              <Stack gap="1.375rem">
+                <Stack gap="0.6875rem">
                   <FormField
                     label="Full name"
                     required
@@ -114,11 +112,11 @@ export function RegisterPage() {
                 </Stack>
 
                 <Text
-                  fontSize="14px"
-                  lineHeight="15px"
+                  fontSize="0.875rem"
+                  lineHeight="0.9375rem"
                   color="text.subtle"
                   textAlign="center"
-                  px="20px"
+                  px="1.25rem"
                 >
                   By signing up you agree to the{" "}
                   <LegalLink href={legalLinks.terms}>Terms of Use</LegalLink>,{" "}
@@ -131,7 +129,7 @@ export function RegisterPage() {
                 </Text>
               </Stack>
 
-              <Button type="submit" w="full" loading={register.isPending}>
+              <Button type="submit" w="full" loading={signup.isPending}>
                 Create account
               </Button>
             </Stack>
@@ -139,7 +137,7 @@ export function RegisterPage() {
 
           <AuthPrompt>
             <AuthPromptLine question="Already have an account?">
-              <TextLink to={appRoutes.auth.login}>Sign in</TextLink>
+              <TextLink to={RouteConstants.auth.login.path}>Sign in</TextLink>
             </AuthPromptLine>
           </AuthPrompt>
         </Stack>

@@ -1,38 +1,30 @@
 import { type RouteObject } from "react-router-dom";
 import { BaseApp } from "./BaseApp";
 import { NotFound, RouteError } from "@/components/error";
-import { GuestOnly, RequireAuth } from "@/components/hoc";
-import {
-  authCallbackRoutes,
-  guestAuthRoutes,
-  protectedAuthRoutes,
-} from "@/features/auth/routes";
+import { RequireAuth } from "@/components/hoc";
+import { AuthRoutes, OnboardingRouteList } from "../features/auth/routes";
+
+const protectedRoutes: RouteObject = {
+  element: <RequireAuth />,
+  errorElement: <RouteError />,
+  children: [
+    {
+      index: true,
+      lazy: () =>
+        import("@/features/dashboard/pages/HomePage").then((m) => ({
+          Component: m.HomePage,
+        })),
+    },
+    ...OnboardingRouteList,
+  ],
+};
 
 export const RoutesList: RouteObject[] = [
   {
     path: "",
     element: <BaseApp />,
     errorElement: <RouteError />,
-    children: [
-      {
-        element: <GuestOnly />,
-        children: guestAuthRoutes,
-      },
-      ...authCallbackRoutes,
-      {
-        element: <RequireAuth />,
-        children: [
-          {
-            index: true,
-            lazy: () =>
-              import("@/features/dashboard/pages/HomePage").then((m) => ({
-                Component: m.HomePage,
-              })),
-          },
-          ...protectedAuthRoutes,
-        ],
-      },
-    ],
+    children: [protectedRoutes, AuthRoutes],
   },
   {
     path: "*",

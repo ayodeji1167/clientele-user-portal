@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import welcomeIllustration from "@/assets/illustrations/welcome-workspace.webp";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { useCurrentUser } from "../api/auth.hooks";
 import { AuthHeader, AuthLayout } from "../components";
 
@@ -12,12 +12,13 @@ export function WelcomePage() {
 
   // The personalisation flow isn't designed yet, so both actions land on the
   // dashboard for now.
-  const goToApp = () => navigate(appRoutes.home, { replace: true });
+  const goToApp = () =>
+    navigate(RouteConstants.overview.base.path, { replace: true });
 
   return (
-    <AuthLayout centered showLogo={false} maxW="376px">
-      <Stack gap="32px" align="center">
-        <Box maxW="314px">
+    <AuthLayout centered showLogo={false} maxW="23.5rem">
+      <Stack gap="2rem" align="center">
+        <Box maxW="19.625rem">
           <AuthHeader
             title={
               firstName
@@ -31,27 +32,27 @@ export function WelcomePage() {
         <Image
           src={welcomeIllustration}
           alt=""
-          w="294px"
-          h="163px"
+          w="18.375rem"
+          h="10.1875rem"
           draggable={false}
         />
 
-        <Stack gap="34px" w="full" pt="3px">
+        <Stack gap="2.125rem" w="full" pt="0.1875rem">
           <Flex
             justify="center"
             align="center"
-            gap="6px"
-            fontSize="14px"
+            gap="0.375rem"
+            fontSize="0.875rem"
             color="text.subtle"
             wrap="wrap"
             textAlign="center"
           >
             <Text>Takes about 2 minutes</Text>
-            <Box boxSize="4px" borderRadius="full" bg="neutral.300" />
+            <Box boxSize="0.25rem" borderRadius="full" bg="neutral.300" />
             <Text>Update your preferences anytime</Text>
           </Flex>
 
-          <Stack gap="8px">
+          <Stack gap="0.5rem">
             <Button w="full" onClick={goToApp}>
               Get started
             </Button>

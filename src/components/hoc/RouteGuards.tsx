@@ -1,5 +1,5 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { getStoredToken } from "@/utils/storage";
 
 /** Signed-out users are sent to sign in, then returned here afterwards. */
@@ -9,7 +9,7 @@ export function RequireAuth() {
   if (!getStoredToken()) {
     return (
       <Navigate
-        to={appRoutes.auth.login}
+        to={RouteConstants.auth.login.path}
         replace
         state={{ from: location.pathname + location.search }}
       />
@@ -22,7 +22,7 @@ export function RequireAuth() {
 /** Keeps signed-in users out of the sign-in and sign-up screens. */
 export function GuestOnly() {
   if (getStoredToken()) {
-    return <Navigate to={appRoutes.home} replace />;
+    return <Navigate to={RouteConstants.overview.base.path} replace />;
   }
 
   return <Outlet />;

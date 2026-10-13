@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FormField, TextInput } from "@/components/input";
 import { toaster } from "@/components/ui";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { fieldError } from "@/utils/form";
 import { useRequestMagicLink } from "../api/auth.hooks";
 import {
@@ -14,7 +14,7 @@ import {
   AuthPromptLine,
   TextLink,
 } from "../components";
-import { emailSchema } from "../validation";
+import { emailSchema } from "../utils/validation";
 
 export function MagicLinkPage() {
   const location = useLocation();
@@ -36,12 +36,12 @@ export function MagicLinkPage() {
   if (sentTo) {
     return (
       <AuthLayout centered>
-        <Stack gap="32px">
+        <Stack gap="2rem">
           <AuthHeader
             title="Check your mailbox"
             subtitle="We sent a secure link to the email you provided"
           />
-          <Stack gap="28px">
+          <Stack gap="1.75rem">
             <FormField label="Email address" required disabled>
               <TextInput value={sentTo} disabled readOnly />
             </FormField>
@@ -77,15 +77,15 @@ export function MagicLinkPage() {
 
   return (
     <AuthLayout>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader
           title="Sign in to your account"
           subtitle="We’ll send a secure link to the email associated with your Clientele account"
         />
 
-        <Stack gap="14px">
+        <Stack gap="0.875rem">
           <form noValidate onSubmit={formik.handleSubmit}>
-            <Stack gap="32px">
+            <Stack gap="2rem">
               <FormField
                 label="Email address"
                 required
@@ -107,13 +107,13 @@ export function MagicLinkPage() {
 
           <AuthPrompt>
             <AuthPromptLine question="Don’t have an account?">
-              <TextLink to={appRoutes.auth.register}>
+              <TextLink to={RouteConstants.auth.signup.path}>
                 Create an account
               </TextLink>
             </AuthPromptLine>
             <TextLink
               tone="neutral"
-              to={appRoutes.auth.loginWithPassword}
+              to={RouteConstants.auth.login.path}
               state={location.state}
             >
               Sign in with password

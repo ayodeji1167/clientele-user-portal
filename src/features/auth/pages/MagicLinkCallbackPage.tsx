@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { getErrorMessage } from "@/utils/handle-error";
 import { useVerifyMagicLink } from "../api/auth.hooks";
 import { AuthStatus } from "../components/AuthStatus";
@@ -18,7 +18,8 @@ export function MagicLinkCallbackPage() {
     if (!token || attempted.current) return;
     attempted.current = true;
     verify.mutate(token, {
-      onSuccess: () => navigate(appRoutes.home, { replace: true }),
+      onSuccess: () =>
+        navigate(RouteConstants.overview.base.path, { replace: true }),
     });
   }, [token, verify, navigate]);
 

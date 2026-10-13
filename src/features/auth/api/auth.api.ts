@@ -5,11 +5,11 @@ import type {
   EmailPayload,
   LoginPayload,
   OAuthProvider,
-  RegisterPayload,
+  SignupPayload,
   ResetPasswordPayload,
   User,
   VerifyEmailPayload,
-} from "../types";
+} from "../interface";
 
 // Assumed backend contract — the backend doesn't exist yet. Responses are
 // wrapped as { message, data }, matching what utils/handle-error expects.
@@ -24,7 +24,7 @@ export const authApi = {
   login: (payload: LoginPayload) => post<AuthSession>("/auth/login", payload),
 
   /** Creates the account and emails a 6-digit verification code. */
-  register: (payload: RegisterPayload) => post<null>("/auth/register", payload),
+  signup: (payload: SignupPayload) => post<null>("/auth/signup", payload),
 
   verifyEmail: (payload: VerifyEmailPayload) =>
     post<AuthSession>("/auth/verify-email", payload),

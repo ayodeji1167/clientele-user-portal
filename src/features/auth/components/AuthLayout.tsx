@@ -17,7 +17,7 @@ export function AuthLayout({
   children,
   centered = false,
   showLogo = true,
-  maxW = "340px",
+  maxW = "21.25rem",
 }: AuthLayoutProps) {
   return (
     <Flex
@@ -26,14 +26,14 @@ export function AuthLayout({
       direction="column"
       align="center"
       justify={centered ? "center" : "flex-start"}
-      px="16px"
-      pt={centered ? "40px" : { base: "48px", md: "80px" }}
-      pb="40px"
+      px="1rem"
+      pt={centered ? "2.5rem" : { base: "3rem", md: "5rem" }}
+      pb="2.5rem"
     >
-      <Stack w="full" maxW={maxW} gap={{ base: "40px", md: "54px" }}>
+      <Stack w="full" maxW={maxW} gap={{ base: "2.5rem", md: "3.375rem" }}>
         {showLogo && (
           <Box display="flex" justifyContent="center">
-            <Image src={logoUrl} alt="Clientele" w="107px" h="29px" />
+            <Image src={logoUrl} alt="Clientele" w="6.6875rem" h="1.8125rem" />
           </Box>
         )}
         {children}

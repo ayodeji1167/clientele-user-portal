@@ -1,7 +1,7 @@
 import { Button, Heading, Stack, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useCurrentUser, useLogout } from "@/features/auth/api/auth.hooks";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 
 // Placeholder until the dashboard is designed.
 export function HomePage() {
@@ -19,7 +19,7 @@ export function HomePage() {
         variant="tertiary"
         onClick={() => {
           logout();
-          navigate(appRoutes.auth.login, { replace: true });
+          navigate(RouteConstants.auth.login.path, { replace: true });
         }}
       >
         Sign out

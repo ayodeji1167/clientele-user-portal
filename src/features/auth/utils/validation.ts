@@ -23,7 +23,7 @@ export const loginSchema = yup.object({
   password: yup.string().required("Enter your password"),
 });
 
-export const registerSchema = yup.object({
+export const signupSchema = yup.object({
   fullName: yup
     .string()
     .trim()

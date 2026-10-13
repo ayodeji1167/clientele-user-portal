@@ -13,7 +13,7 @@ export type AuthSession = {
 
 export type LoginPayload = { email: string; password: string };
 
-export type RegisterPayload = {
+export type SignupPayload = {
   fullName: string;
   email: string;
   password: string;

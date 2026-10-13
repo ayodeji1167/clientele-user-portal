@@ -2,11 +2,11 @@ import { Button, Stack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { FormField, PasswordInput } from "@/components/input";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { fieldError } from "@/utils/form";
 import { useResetPassword } from "../api/auth.hooks";
 import { AuthHeader, AuthLayout, AuthPrompt, TextLink } from "../components";
-import { resetPasswordSchema } from "../validation";
+import { resetPasswordSchema } from "../utils/validation";
 
 // No mockup exists for this step; it reuses the forgot-password layout.
 export function ResetPasswordPage() {
@@ -23,27 +23,29 @@ export function ResetPasswordPage() {
         { token: token ?? "", password },
         {
           onSuccess: () =>
-            navigate(appRoutes.auth.loginWithPassword, { replace: true }),
+            navigate(RouteConstants.auth.login.path, {
+              replace: true,
+            }),
         },
       ),
   });
 
   if (!token) {
-    return <Navigate to={appRoutes.auth.forgotPassword} replace />;
+    return <Navigate to={RouteConstants.auth.forgotPassword.path} replace />;
   }
 
   return (
     <AuthLayout>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader
           title="Set a new password"
           subtitle="Use at least 8 characters"
         />
 
-        <Stack gap="14px">
+        <Stack gap="0.875rem">
           <form noValidate onSubmit={formik.handleSubmit}>
-            <Stack gap="28px">
-              <Stack gap="11px">
+            <Stack gap="1.75rem">
+              <Stack gap="0.6875rem">
                 <FormField
                   label="New password"
                   required
@@ -74,7 +76,10 @@ export function ResetPasswordPage() {
           </form>
 
           <AuthPrompt>
-            <TextLink tone="neutral" to={appRoutes.auth.forgotPassword}>
+            <TextLink
+              tone="neutral"
+              to={RouteConstants.auth.forgotPassword.path}
+            >
               Request a new link
             </TextLink>
           </AuthPrompt>

@@ -5,7 +5,7 @@ import {
   getStoredToken,
   setStoredToken,
 } from "@/utils/storage";
-import type { AuthSession } from "../types";
+import type { AuthSession } from "../interface";
 import { authApi } from "./auth.api";
 
 const meKey = [queryKey.auth.me];
@@ -31,8 +31,8 @@ export function useLogin() {
   return useMutation({ mutationFn: authApi.login, onSuccess: startSession });
 }
 
-export function useRegister() {
-  return useMutation({ mutationFn: authApi.register });
+export function useSignup() {
+  return useMutation({ mutationFn: authApi.signup });
 }
 
 export function useVerifyEmail() {

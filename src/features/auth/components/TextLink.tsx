@@ -21,14 +21,14 @@ const toneStyles = {
   },
   muted: {
     color: "text.tertiary",
-    fontSize: "14px",
+    fontSize: "0.875rem",
     _hover: { color: "text.primary" },
   },
 } satisfies Record<Tone, HTMLChakraProps<"a">>;
 
 const baseStyles = {
-  textUnderlineOffset: "3px",
-  borderRadius: "2px",
+  textUnderlineOffset: "0.1875rem",
+  borderRadius: "0.125rem",
   cursor: "pointer",
   _focusVisible: { outline: "none", boxShadow: "ring.focusNeutral" },
   _disabled: { opacity: 0.5, cursor: "not-allowed" },

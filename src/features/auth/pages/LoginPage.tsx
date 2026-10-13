@@ -2,7 +2,7 @@ import { Button, Flex, Stack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FormField, PasswordInput, TextInput } from "@/components/input";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 import { fieldError } from "@/utils/form";
 import { useLogin } from "../api/auth.hooks";
 import {
@@ -13,7 +13,7 @@ import {
   SocialAuthButtons,
   TextLink,
 } from "../components";
-import { loginSchema } from "../validation";
+import { loginSchema } from "../utils/validation";
 
 export function LoginPage() {
   const navigate = useNavigate();
@@ -29,7 +29,9 @@ export function LoginPage() {
         {
           onSuccess: () => {
             const from = (location.state as { from?: string } | null)?.from;
-            navigate(from ?? appRoutes.home, { replace: true });
+            navigate(from ?? RouteConstants.overview.base.path, {
+              replace: true,
+            });
           },
         },
       ),
@@ -37,13 +39,13 @@ export function LoginPage() {
 
   return (
     <AuthLayout>
-      <Stack gap="32px">
+      <Stack gap="2rem">
         <AuthHeader title="Sign in to your account" />
 
-        <Stack gap="14px">
+        <Stack gap="0.875rem">
           <form noValidate onSubmit={formik.handleSubmit}>
-            <Stack gap="30px">
-              <Stack gap="11px">
+            <Stack gap="1.875rem">
+              <Stack gap="0.6875rem">
                 <FormField
                   label="Email address"
                   required
@@ -56,7 +58,7 @@ export function LoginPage() {
                   />
                 </FormField>
 
-                <Stack gap="2px">
+                <Stack gap="0.125rem">
                   <FormField
                     label="Password"
                     required
@@ -68,7 +70,10 @@ export function LoginPage() {
                     />
                   </FormField>
                   <Flex justify="flex-end" lineHeight="1">
-                    <TextLink tone="muted" to={appRoutes.auth.forgotPassword}>
+                    <TextLink
+                      tone="muted"
+                      to={RouteConstants.auth.forgotPassword.path}
+                    >
                       Forgot password?
                     </TextLink>
                   </Flex>
@@ -83,11 +88,15 @@ export function LoginPage() {
 
           <AuthPrompt>
             <AuthPromptLine question="Don’t have an account?">
-              <TextLink to={appRoutes.auth.register}>
+              <TextLink to={RouteConstants.auth.signup.path}>
                 Create an account
               </TextLink>
             </AuthPromptLine>
-            <TextLink tone="neutral" to={appRoutes.auth.login}>
+            <TextLink
+              tone="neutral"
+              to={RouteConstants.auth.secureLink.path}
+              state={location.state}
+            >
               Sign in with a secure link
             </TextLink>
           </AuthPrompt>

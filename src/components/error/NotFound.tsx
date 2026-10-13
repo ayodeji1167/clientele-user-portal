@@ -1,6 +1,6 @@
 import { Button, Heading, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { appRoutes } from "@/shared/constants/routes";
+import { RouteConstants } from "@/shared/constants/routes";
 
 export function NotFound() {
   return (
@@ -8,7 +8,7 @@ export function NotFound() {
       <Heading size="2xl">404</Heading>
       <Text color="gray.500">The page you are looking for does not exist.</Text>
       <Button asChild>
-        <Link to={appRoutes.home}>Go home</Link>
+        <Link to={RouteConstants.overview.base.path}>Go home</Link>
       </Button>
     </Stack>
   );
