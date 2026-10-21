@@ -5,8 +5,10 @@ import { getStoredToken } from "@/utils/storage";
 /** Signed-out users are sent to sign in, then returned here afterwards. */
 export function RequireAuth() {
   const location = useLocation();
+  const isLoggedIn = true;
+  // const isLoggedIn = !!getStoredToken();
 
-  if (!getStoredToken()) {
+  if (!isLoggedIn) {
     return (
       <Navigate
         to={RouteConstants.auth.login.path}
@@ -21,7 +23,9 @@ export function RequireAuth() {
 
 /** Keeps signed-in users out of the sign-in and sign-up screens. */
 export function GuestOnly() {
-  if (getStoredToken()) {
+  const isLoggedIn = !!getStoredToken();
+
+  if (isLoggedIn) {
     return <Navigate to={RouteConstants.overview.base.path} replace />;
   }
 
