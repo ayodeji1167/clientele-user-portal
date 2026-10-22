@@ -30,10 +30,8 @@ export function FormField({
       gap="0.25rem"
     >
       <Field.Label
-        fontSize="0.875rem"
+        textStyle="p3"
         fontWeight="500"
-        lineHeight="1.1"
-        letterSpacing="-0.03em"
         color="text.primary"
         gap="0.25rem"
         _disabled={{ opacity: 1, color: "text.subtle" }}
@@ -53,12 +51,12 @@ export function FormField({
       </Field.Label>
       {children}
       {error ? (
-        <Field.ErrorText fontSize="0.875rem" color="text.error">
+        <Field.ErrorText textStyle="p3" color="text.error">
           {error}
         </Field.ErrorText>
       ) : (
         helperText && (
-          <Field.HelperText fontSize="0.875rem" color="text.tertiary">
+          <Field.HelperText textStyle="p3" color="text.tertiary">
             {helperText}
           </Field.HelperText>
         )

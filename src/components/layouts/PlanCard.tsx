@@ -5,9 +5,9 @@ import { RouteConstants } from "@/shared/constants/routes";
 
 function UsageLine({ label, value }: { label: string; value: string }) {
   return (
-    <Text fontSize="0.8125rem" lineHeight="1rem" color="text.subtle">
+    <Text textStyle="p4" lineHeight="1rem" color="text.subtle">
       {label}:{" "}
-      <Text as="span" color="white" fontWeight="500">
+      <Text as="span" color="text.inverse" fontWeight="500">
         {value}
       </Text>
     </Text>
@@ -22,12 +22,10 @@ export function PlanCard({ plan }: { plan: WorkspacePlan }) {
   return (
     <Box bg="westar.950" borderRadius="0.75rem" p="0.75rem">
       <Text
-        fontSize="0.875rem"
-        lineHeight="1.1"
+        textStyle="p3"
         fontWeight="600"
-        letterSpacing="-0.03em"
         textTransform="uppercase"
-        color="white"
+        color="text.inverse"
       >
         {plan.name} plan
       </Text>

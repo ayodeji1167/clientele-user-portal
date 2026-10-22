@@ -12,11 +12,10 @@ function SectionLabel({ children }: { children: string }) {
   return (
     <Text
       px="1rem"
-      fontSize="0.75rem"
-      fontWeight="500"
-      letterSpacing="-0.015em"
+      textStyle="p4"
+      fontWeight="600"
       textTransform="uppercase"
-      color="text.subtle"
+      color="neutral.400"
     >
       {children}
     </Text>
@@ -73,6 +72,7 @@ export function SideBar({ onNavigate }: SideBarProps) {
               // bg={"blue"}
               h={"100%"}
               justifyContent={"space-between"}
+              py={".05rem"}
             >
               <Text
                 // fontSize="1rem"
@@ -99,7 +99,7 @@ export function SideBar({ onNavigate }: SideBarProps) {
         </Flex>
       )}
 
-      <Stack gap="0.4375rem" mt="1.8125rem">
+      <Stack gap="0.75rem" mt="2rem">
         <SectionLabel>Workspace</SectionLabel>
         <Stack gap="0.25rem" px="0.5rem">
           {sideBarItems.map((item) => {
@@ -118,9 +118,8 @@ export function SideBar({ onNavigate }: SideBarProps) {
                 h="2.125rem"
                 px="0.75rem"
                 borderRadius="0.5rem"
-                fontSize="1rem"
+                textStyle="p2"
                 fontWeight={active ? "500" : "400"}
-                letterSpacing={active ? "-0.03em" : "-0.015em"}
                 color={active ? "neutral.800" : "text.muted"}
                 bg={active ? "bg.tertiary" : "transparent"}
                 _hover={{ bg: active ? "bg.tertiary" : "bg.primary" }}
@@ -166,7 +165,7 @@ export function SideBar({ onNavigate }: SideBarProps) {
                 h="2.3125rem"
                 px="0.5rem"
                 borderRadius="0.5rem"
-                fontSize="1rem"
+                textStyle="p2"
                 color="text.secondary"
                 _hover={{ bg: "bg.primary" }}
                 _focusVisible={{
@@ -184,7 +183,6 @@ export function SideBar({ onNavigate }: SideBarProps) {
                     name={client.name}
                     src={client.avatarUrl}
                     size="1.8125rem"
-                    fontSize="0.6875rem"
                   />
                   <Text as="span" truncate>
                     {client.name}

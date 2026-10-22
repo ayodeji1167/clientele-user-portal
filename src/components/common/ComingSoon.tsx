@@ -10,7 +10,9 @@ export function ComingSoon({ title }: { title: string }) {
         <Heading textStyle="h5" fontWeight="600" color="text.primary">
           {title}
         </Heading>
-        <Text color="text.muted">This section is on its way.</Text>
+        <Text textStyle="p2" color="text.muted">
+          This section is on its way.
+        </Text>
       </Stack>
     </>
   );

@@ -17,7 +17,7 @@ function RevisionRow({ revision }: { revision: PendingRevision }) {
     <ListCard
       py="0.75rem"
       actions={
-        <Button asChild h="2rem" px="1rem" fontSize="0.9375rem">
+        <Button asChild h="2rem" px="1rem">
           <Link
             to={RouteConstants.portals.revisions.generate({
               id: revision.portalId,
@@ -71,7 +71,7 @@ function RevisionRow({ revision }: { revision: PendingRevision }) {
           </MetaLine>
           <MetaLine
             // bg={"red.200"}
-            fontSize="0.875rem"
+            textStyle="p3"
             color="text.tertiary"
             lineHeight={"0rem"}
           >

@@ -24,12 +24,7 @@ export function SwitchRow({ label, checked, onChange, name }: SwitchRowProps) {
       cursor="pointer"
     >
       <Switch.HiddenInput />
-      <Switch.Label
-        fontSize="1rem"
-        fontWeight="400"
-        color="text.primary"
-        cursor="pointer"
-      >
+      <Switch.Label textStyle="p2" color="text.primary" cursor="pointer">
         {label}
       </Switch.Label>
       <Switch.Control
@@ -43,7 +38,11 @@ export function SwitchRow({ label, checked, onChange, name }: SwitchRowProps) {
         focusVisibleRing="none"
         _focusVisible={{ boxShadow: "ring.focusNeutral" }}
       >
-        <Switch.Thumb boxSize="0.875rem" bg="white" boxShadow="small.1" />
+        <Switch.Thumb
+          boxSize="0.875rem"
+          bg="bg.secondary"
+          boxShadow="small.1"
+        />
       </Switch.Control>
     </Switch.Root>
   );

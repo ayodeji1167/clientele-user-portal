@@ -17,7 +17,7 @@ const itemStyles = {
   gap: "0.5rem",
   px: "1rem",
   py: "0.5rem",
-  fontSize: "1rem",
+  textStyle: "p2",
   color: "text.secondary",
   borderRadius: "0",
   cursor: "pointer",
@@ -71,15 +71,14 @@ export function ProfileMenu({ workspace, children }: ProfileMenuProps) {
               />
               <Stack gap="0.125rem" minW="0">
                 <Text
-                  fontSize="1.0625rem"
+                  textStyle="p1"
                   fontWeight="600"
-                  letterSpacing="-0.03em"
                   color="text.primary"
                   truncate
                 >
                   {member.fullName}
                 </Text>
-                <Text fontSize="0.9375rem" color="text.muted">
+                <Text textStyle="p3" color="text.muted">
                   {plan.name} plan
                 </Text>
               </Stack>

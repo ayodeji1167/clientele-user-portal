@@ -8,6 +8,32 @@
   font-display: swap;
 }
 
+/* Benton Modern Display (licensed) — only the styles the app uses: Light
+   for the serif text styles, Regular Italic for quoted titles, Semibold
+   Italic for greetings. Other weights live as OTFs in design/fonts/;
+   convert to woff2 and add a rule here when a design needs one. */
+@font-face {
+  font-family: "BentonModDisp";
+  src: url("/fonts/benton/BentonModDisp-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BentonModDisp";
+  src: url("/fonts/benton/BentonModDisp-RegularIt.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BentonModDisp";
+  src: url("/fonts/benton/BentonModDisp-SemiboldIt.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }

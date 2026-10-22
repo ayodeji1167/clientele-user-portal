@@ -10,7 +10,7 @@ import { SectionEmpty, SectionSkeleton } from "../shared/SectionState";
 import { RescheduleMeetingModal } from "./RescheduleMeetingModal";
 import { ScheduleRow } from "./ScheduleRow";
 
-const actionStyles = { h: "2rem", fontSize: "0.9375rem" } as const;
+const actionStyles = { h: "2rem" } as const;
 
 export function UpcomingMeetings() {
   const now = useNow();

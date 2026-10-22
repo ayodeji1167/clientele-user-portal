@@ -5,7 +5,6 @@ type UserAvatarProps = {
   src?: string;
   /** Diameter, e.g. "1.875rem". */
   size: string;
-  fontSize?: string;
   avatarFallBackProps?: AvatarFallbackProps;
 };
 
@@ -19,12 +18,12 @@ export function UserAvatar({
   name,
   src,
   size,
-  fontSize = "0.75rem",
   avatarFallBackProps,
 }: UserAvatarProps) {
   return (
     <Avatar.Root boxSize={size} flexShrink={0} bg="neutral.200">
       <Avatar.Fallback
+        textStyle="p4"
         fontWeight="600"
         color="text.secondary"
         letterSpacing="0"

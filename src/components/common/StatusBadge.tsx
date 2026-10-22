@@ -19,10 +19,10 @@ export function StatusBadge({ tone, children, ...rest }: StatusBadgeProps) {
       display="inline-flex"
       alignItems="center"
       flexShrink={0}
-      h="1.25rem"
+      h="1.125rem"
       px="0.4375rem"
       borderRadius="full"
-      fontSize="0.8125rem"
+      textStyle="p4"
       fontWeight="500"
       lineHeight="1"
       whiteSpace="nowrap"

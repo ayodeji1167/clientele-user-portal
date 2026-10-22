@@ -8,7 +8,6 @@ const actionStyles = {
   h: "2.0625rem",
   px: "0.625rem",
   gap: "0.375rem",
-  fontSize: "0.9375rem",
 } as const;
 
 export function NavBar({ onMenuOpen }: { onMenuOpen: () => void }) {

@@ -13,7 +13,7 @@ const providers: {
   {
     id: "apple",
     label: "Continue with Apple",
-    icon: <AppleIcon color="black" />,
+    icon: <AppleIcon color="text.primary" />,
   },
 ];
 

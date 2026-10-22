@@ -37,7 +37,7 @@ export function PeriodMenu({ value, onChange, label }: PeriodMenuProps) {
           borderWidth="0.0625rem"
           borderColor="border.primary"
           borderRadius="full"
-          fontSize="0.9375rem"
+          textStyle="p3"
           color="text.secondary"
           cursor="pointer"
           _hover={{ bg: "bg.primary" }}

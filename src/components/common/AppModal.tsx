@@ -71,9 +71,8 @@ export function AppModal({
             <Dialog.Header p="0" pb="2rem">
               <Stack gap="0.5rem">
                 <Dialog.Title
-                  fontSize="1.25rem"
+                  textStyle="h6"
                   fontWeight="600"
-                  letterSpacing="-0.03em"
                   lineHeight="1.2"
                   color="text.primary"
                 >
@@ -81,7 +80,7 @@ export function AppModal({
                 </Dialog.Title>
                 {description && (
                   <Dialog.Description
-                    fontSize="1rem"
+                    textStyle="p2"
                     lineHeight="1.15"
                     color="text.muted"
                   >

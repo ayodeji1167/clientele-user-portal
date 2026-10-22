@@ -24,7 +24,7 @@ export function SectionEmpty({ children }: { children: string }) {
       py="1.5rem"
       px="1rem"
       textAlign="center"
-      fontSize="0.9375rem"
+      textStyle="p3"
       color="text.muted"
       bg="bg.secondary"
       borderWidth="0.0625rem"

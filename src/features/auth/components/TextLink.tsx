@@ -8,7 +8,6 @@ const toneStyles = {
   brand: {
     color: "sandal.700",
     fontWeight: "600",
-    letterSpacing: "-0.03em",
     textDecoration: "underline",
     textDecorationColor: "sandal.200",
     _hover: { textDecorationColor: "sandal.700" },
@@ -21,7 +20,7 @@ const toneStyles = {
   },
   muted: {
     color: "text.tertiary",
-    fontSize: "0.875rem",
+    textStyle: "p3",
     _hover: { color: "text.primary" },
   },
 } satisfies Record<Tone, HTMLChakraProps<"a">>;

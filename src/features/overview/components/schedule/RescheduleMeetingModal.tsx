@@ -158,7 +158,7 @@ export function RescheduleMeetingModal({
                   h="2.5rem"
                   borderWidth="0.0625rem"
                   borderRadius="0.5rem"
-                  fontSize="0.9375rem"
+                  textStyle="p3"
                   cursor="pointer"
                   borderColor={selected ? "sandal.700" : "border.primary"}
                   bg={selected ? "sandal.50" : "bg.secondary"}
@@ -203,7 +203,7 @@ export function RescheduleMeetingModal({
               bg="transparent"
               outline="none"
               color="text.primary"
-              fontSize="1rem"
+              textStyle="p2"
             />
           </Flex>
         </FormField>

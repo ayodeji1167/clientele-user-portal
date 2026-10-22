@@ -112,8 +112,7 @@ export function SignupPage() {
                 </Stack>
 
                 <Text
-                  fontSize="0.875rem"
-                  lineHeight="0.9375rem"
+                  textStyle="p3"
                   color="text.subtle"
                   textAlign="center"
                   px="1.25rem"

@@ -11,7 +11,7 @@ import { SectionEmpty, SectionSkeleton } from "../shared/SectionState";
 
 function Name({ children }: { children: string }) {
   return (
-    <Text as="span" fontWeight="600" letterSpacing="-0.03em">
+    <Text as="span" fontWeight="600">
       {children}
     </Text>
   );
@@ -100,15 +100,10 @@ export function RecentActivity() {
               borderColor="border.secondary"
               borderRadius="0.75rem"
             >
-              <Box flex="1" minW="0" fontSize="1rem" color="text.primary">
+              <Box flex="1" minW="0" textStyle="p2" color="text.primary">
                 {message(item)}
               </Box>
-              <Text
-                asChild
-                flexShrink={0}
-                fontSize="0.8125rem"
-                color="text.subtle"
-              >
+              <Text asChild flexShrink={0} textStyle="p4" color="text.subtle">
                 <time dateTime={item.occurredAt}>
                   {timeAgo(item.occurredAt, now)}
                 </time>

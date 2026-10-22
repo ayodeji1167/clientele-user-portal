@@ -35,6 +35,16 @@ export const textStyles = defineTextStyles({
       letterSpacing: "-0.03em",
     },
   },
+  h2Serif: {
+    description: "Benton Modern Display H2 (50px) — page greetings",
+    value: {
+      fontFamily: "display",
+      fontSize: "50px",
+      fontWeight: "300",
+      lineHeight: "0.82",
+      letterSpacing: "-0.03em",
+    },
+  },
   h1: {
     description: "Page titles, primary screen headings",
     value: {

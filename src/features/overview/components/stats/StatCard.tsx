@@ -42,10 +42,8 @@ export function StatCard({
     >
       <Stack gap="2.25rem">
         <Text
-          fontSize="0.875rem"
+          textStyle="p3"
           fontWeight="600"
-          lineHeight="1.1"
-          letterSpacing="-0.015em"
           textTransform="uppercase"
           color="text.subtle"
         >
@@ -53,15 +51,14 @@ export function StatCard({
         </Text>
         <Skeleton loading={isPending} w="fit-content" minW="4rem">
           <Text
-            fontSize="2rem"
+            textStyle="h3"
             fontWeight="600"
             lineHeight="1"
-            letterSpacing="-0.03em"
             color="text.primary"
             fontVariantNumeric="tabular-nums"
             aria-live="polite"
           >
-            {stat ? (hidden ? "••••" : display(stat)) : "—"}
+            {stat ? (hidden ? "****" : display(stat)) : "—"}
           </Text>
         </Skeleton>
       </Stack>

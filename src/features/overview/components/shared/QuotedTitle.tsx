@@ -5,12 +5,7 @@ export function QuotedTitle({ children }: { children: string }) {
   return (
     <Text as="span" whiteSpace="nowrap">
       “
-      <Text
-        as="span"
-        fontFamily="display"
-        fontStyle="italic"
-        letterSpacing="-0.02em"
-      >
+      <Text as="span" fontFamily="display" fontStyle="italic">
         {children}
       </Text>
       ”

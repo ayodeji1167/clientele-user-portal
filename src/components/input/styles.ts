@@ -8,8 +8,7 @@ export const fieldSurface: SystemStyleObject = {
   borderColor: "border.primary",
   borderRadius: "0.5rem",
   color: "text.primary",
-  fontSize: "1rem",
-  letterSpacing: "-0.015em",
+  textStyle: "p2",
   focusVisibleRing: "none",
   _placeholder: { color: "text.placeholder" },
   _focusVisible: {
@@ -42,7 +41,7 @@ export const dropdownPanel: SystemStyleObject = {
 export const dropdownItem: SystemStyleObject = {
   px: "1.5rem",
   py: "0.75rem",
-  fontSize: "1rem",
+  textStyle: "p2",
   color: "text.secondary",
   borderRadius: "0",
   cursor: "pointer",

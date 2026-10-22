@@ -11,7 +11,7 @@ import { SectionEmpty, SectionSkeleton } from "../shared/SectionState";
 import { ExtendDeadlineModal } from "./ExtendDeadlineModal";
 import { ScheduleRow } from "./ScheduleRow";
 
-const actionStyles = { h: "2rem", w: "5rem", fontSize: "0.9375rem" } as const;
+const actionStyles = { h: "2rem", w: "5rem" } as const;
 
 export function UpcomingDeadlines() {
   const now = useNow();
