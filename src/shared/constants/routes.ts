@@ -16,6 +16,7 @@ const auth = {
 
 const onboarding = {
   welcome: defineRoute("/welcome" as const),
+  start: defineRoute("/welcome/start" as const),
 } as const;
 
 const overview = {
