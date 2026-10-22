@@ -7,7 +7,7 @@ export const fonts = {
   heading: { value: `'Overused Grotesk', system-ui, sans-serif` },
   body: { value: `'Overused Grotesk', system-ui, sans-serif` },
   display: {
-    value: `'Benton Modern Display', Georgia, 'Times New Roman', serif`,
+    value: `'BentonModDisp', 'Benton Modern Display', Georgia, 'Times New Roman', serif`,
   },
 };
 

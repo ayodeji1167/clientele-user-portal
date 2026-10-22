@@ -1,43 +1,5 @@
 import { Icon, type IconProps } from "@chakra-ui/react";
 
-// Outline icons follow the design system: 1.5px stroke, round caps.
-const outline = {
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 1.5,
-  strokeLinecap: "round",
-  strokeLinejoin: "round",
-} as const;
-
-export function EyeIcon(props: IconProps) {
-  return (
-    <Icon boxSize="18px" {...props}>
-      <svg viewBox="0 0 24 24">
-        <path
-          {...outline}
-          d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"
-        />
-        <circle {...outline} cx="12" cy="12" r="3" />
-      </svg>
-    </Icon>
-  );
-}
-
-export function EyeOffIcon(props: IconProps) {
-  return (
-    <Icon boxSize="18px" {...props}>
-      <svg viewBox="0 0 24 24">
-        <path
-          {...outline}
-          d="M9.9 5.8A9.8 9.8 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.7 3.6M6.6 6.6C4 8.4 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.9 0 3.5-.6 4.9-1.5"
-        />
-        <path {...outline} d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
-        <path {...outline} d="M3 3l18 18" />
-      </svg>
-    </Icon>
-  );
-}
-
 export function GoogleIcon(props: IconProps) {
   return (
     <Icon boxSize="17px" {...props}>

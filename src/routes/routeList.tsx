@@ -3,20 +3,12 @@ import { BaseApp } from "./BaseApp";
 import { NotFound, RouteError } from "@/components/error";
 import { RequireAuth } from "@/components/hoc";
 import { AuthRoutes, OnboardingRouteList } from "../features/auth/routes";
+import { DashboardRoutes } from "./DashboardRoutes";
 
 const protectedRoutes: RouteObject = {
   element: <RequireAuth />,
   errorElement: <RouteError />,
-  children: [
-    {
-      index: true,
-      lazy: () =>
-        import("@/features/dashboard/pages/HomePage").then((m) => ({
-          Component: m.HomePage,
-        })),
-    },
-    ...OnboardingRouteList,
-  ],
+  children: [DashboardRoutes, ...OnboardingRouteList],
 };
 
 export const RoutesList: RouteObject[] = [
