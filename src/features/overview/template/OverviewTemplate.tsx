@@ -9,7 +9,7 @@ import { StatsGrid } from "../components/stats/StatsGrid";
 export function OverviewTemplate() {
   return (
     <Stack gap="2.875rem" maxW="66.875rem">
-      <Stack gap="2.6875rem">
+      <Stack gap="2.8rem">
         <Greeting />
         <StatsGrid />
       </Stack>

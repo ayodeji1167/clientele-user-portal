@@ -89,8 +89,8 @@ export const colors = {
 export const semanticColors = {
   text: {
     primary: { value: "{colors.neutral.900}" },
-    secondary: { value: "{colors.neutral.700}" },
-    tertiary: { value: "{colors.neutral.600}" },
+    secondary: { value: "{colors.neutral.600}" },
+    tertiary: { value: "{colors.neutral.500}" },
     inverse: { value: "{colors.neutral.100}" },
     placeholder: { value: "{colors.neutral.500}" },
     // Subdued text group from the Color page (#767676 / #A5A5A5), used for

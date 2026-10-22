@@ -1,4 +1,4 @@
-import { Button, Flex, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Span, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { MetaLine, StatusBadge, UserAvatar } from "@/components/common";
 import { CommentIcon, WithUnreadDot } from "@/components/icons";
@@ -32,25 +32,51 @@ function RevisionRow({ revision }: { revision: PendingRevision }) {
         <UserAvatar
           name={revision.client.name}
           src={revision.client.avatarUrl}
-          size="1.875rem"
+          size="2rem"
+          avatarFallBackProps={{
+            fontSize: "13.7px",
+            fontWeight: 700,
+          }}
         />
-        <Stack gap="0.125rem" minW="0" lineHeight="1.25">
+        <Stack gap="0.4rem" minW="0" lineHeight="1.25">
           <Flex align="center" gap="0.625rem" minW="0">
-            <Text fontSize="1rem" color="text.primary" truncate>
+            <Text
+              textStyle={"p2"}
+              fontWeight={500}
+              color="text.primary"
+              truncate
+            >
               {revision.client.name}
             </Text>
             {revision.portalStatus === "active" && (
-              <StatusBadge tone="success">Active</StatusBadge>
+              <StatusBadge
+                textStyle={"p4"}
+                h={"1.125rem"}
+                tone="success"
+                color={"success.700"}
+              >
+                Active
+              </StatusBadge>
             )}
           </Flex>
-          <MetaLine fontSize="0.9375rem" color="text.tertiary">
-            <span>{revision.project}</span>
-            <span>{revision.milestone}</span>
-            <span>{plural(revision.revisionCount, "revision")}</span>
+          <MetaLine
+            // fontSize="0.9375rem"
+            color="text.secondary"
+          >
+            <Span textStyle={"p3"}>{revision.project}</Span>
+            <Span textStyle={"p3"}>{revision.milestone}</Span>
+            <Span textStyle={"p3"}>
+              {plural(revision.revisionCount, "revision")}
+            </Span>
           </MetaLine>
-          <MetaLine fontSize="0.875rem" color="text.muted">
-            <span>{plural(revision.fileCount, "file")}</span>
-            <span>{plural(revision.linkCount, "link")}</span>
+          <MetaLine
+            // bg={"red.200"}
+            fontSize="0.875rem"
+            color="text.tertiary"
+            lineHeight={"0rem"}
+          >
+            <Span textStyle={"p3"}>{plural(revision.fileCount, "file")}</Span>
+            <Span textStyle={"p3"}>{plural(revision.linkCount, "link")}</Span>
             <Flex
               as="span"
               align="center"
@@ -80,7 +106,7 @@ export function PendingRevisions() {
       {isPending ? (
         <SectionSkeleton rowH="5.375rem" />
       ) : revisions?.length ? (
-        <Stack gap="0.3125rem">
+        <Stack gap="0.375rem">
           {revisions.map((revision) => (
             <RevisionRow key={revision.id} revision={revision} />
           ))}

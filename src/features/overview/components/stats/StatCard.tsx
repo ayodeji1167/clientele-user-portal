@@ -43,7 +43,7 @@ export function StatCard({
       <Stack gap="2.25rem">
         <Text
           fontSize="0.875rem"
-          fontWeight="500"
+          fontWeight="600"
           lineHeight="1.1"
           letterSpacing="-0.015em"
           textTransform="uppercase"

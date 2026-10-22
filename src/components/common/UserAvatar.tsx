@@ -1,4 +1,4 @@
-import { Avatar } from "@chakra-ui/react";
+import { Avatar, type AvatarFallbackProps } from "@chakra-ui/react";
 
 type UserAvatarProps = {
   name: string;
@@ -6,6 +6,7 @@ type UserAvatarProps = {
   /** Diameter, e.g. "1.875rem". */
   size: string;
   fontSize?: string;
+  avatarFallBackProps?: AvatarFallbackProps;
 };
 
 function initials(name: string) {
@@ -19,14 +20,15 @@ export function UserAvatar({
   src,
   size,
   fontSize = "0.75rem",
+  avatarFallBackProps,
 }: UserAvatarProps) {
   return (
     <Avatar.Root boxSize={size} flexShrink={0} bg="neutral.200">
       <Avatar.Fallback
-        fontSize={fontSize}
         fontWeight="600"
         color="text.secondary"
         letterSpacing="0"
+        {...avatarFallBackProps}
       >
         {initials(name)}
       </Avatar.Fallback>
