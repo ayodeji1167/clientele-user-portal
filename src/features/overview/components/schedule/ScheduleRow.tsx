@@ -1,4 +1,4 @@
-import { Flex, Stack, Text } from "@chakra-ui/react";
+import { Flex, Span, Stack, Text } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 import { MetaLine, StatusBadge, type StatusTone } from "@/components/common";
 import { DateBlock } from "../shared/DateBlock";
@@ -23,18 +23,31 @@ export function ScheduleRow({
   return (
     <ListCard py="0.6875rem" actions={actions}>
       <DateBlock iso={date} />
-      <Stack gap="0.125rem" minW="0">
+      <Stack gap="0.4rem" minW="0">
         <Flex align="center" gap="0.625rem" minW="0">
-          <Text fontSize="1rem" color="text.primary" truncate title={title}>
+          <Text
+            textStyle={"p2"}
+            color="text.primary"
+            fontWeight={500}
+            truncate
+            title={title}
+          >
             {title}
           </Text>
-          <StatusBadge tone={badge.tone}>{badge.label}</StatusBadge>
+          <StatusBadge
+            tone={badge.tone}
+            h={"1.125rem"}
+            textStyle={"p4"}
+            fontWeight={"500"}
+          >
+            {badge.label}
+          </StatusBadge>
         </Flex>
-        <MetaLine fontSize="0.875rem" color="text.tertiary" wrap="nowrap">
+        <MetaLine color="text.secondary" wrap="nowrap">
           {meta.map((item) => (
-            <Text as="span" key={item} truncate>
+            <Span textStyle={"p3"} key={item} truncate>
               {item}
-            </Text>
+            </Span>
           ))}
         </MetaLine>
       </Stack>

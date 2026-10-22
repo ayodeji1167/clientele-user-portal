@@ -24,7 +24,7 @@ export function UpcomingDeadlines() {
       {isPending ? (
         <SectionSkeleton rowH="4.375rem" />
       ) : deadlines?.length ? (
-        <Stack gap="0.3125rem">
+        <Stack gap="0.375rem">
           {deadlines.map((deadline) => (
             <ScheduleRow
               key={deadline.id}

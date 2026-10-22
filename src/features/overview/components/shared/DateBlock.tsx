@@ -19,15 +19,14 @@ export function DateBlock({ iso }: { iso: string }) {
     >
       <time dateTime={iso}>
         <Text
-          fontSize="1.5rem"
-          fontWeight="600"
-          lineHeight="1"
-          letterSpacing="-0.03em"
+          textStyle={"h5"}
+          fontWeight={"600"}
           color="text.primary"
+          lineHeight={"100%"}
         >
           {day}
         </Text>
-        <Text fontSize="0.75rem" lineHeight="1.1" color="text.muted">
+        <Text textStyle={"p4"} fontWeight={500} color={"text.tertiary"}>
           {month}
         </Text>
       </time>
