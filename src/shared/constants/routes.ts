@@ -18,6 +18,7 @@ const onboarding = {
   welcome: defineRoute("/welcome" as const),
   start: defineRoute("/welcome/start" as const),
   industry: defineRoute("/welcome/industry" as const),
+  services: defineRoute("/welcome/services" as const),
 } as const;
 
 const overview = {
