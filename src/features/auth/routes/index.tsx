@@ -111,4 +111,11 @@ export const OnboardingRouteList: RouteObject[] = [
         Component: m.OnboardingServicesPage,
       })),
   },
+  {
+    path: onboarding.payment.path,
+    lazy: () =>
+      import("../pages/OnboardingPaymentPage").then((m) => ({
+        Component: m.OnboardingPaymentPage,
+      })),
+  },
 ];
