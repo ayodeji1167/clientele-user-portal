@@ -118,4 +118,18 @@ export const OnboardingRouteList: RouteObject[] = [
         Component: m.OnboardingPaymentPage,
       })),
   },
+  {
+    path: onboarding.studio.path,
+    lazy: () =>
+      import("../pages/OnboardingStudioPage").then((m) => ({
+        Component: m.OnboardingStudioPage,
+      })),
+  },
+  {
+    path: onboarding.business.path,
+    lazy: () =>
+      import("../pages/OnboardingBusinessPage").then((m) => ({
+        Component: m.OnboardingBusinessPage,
+      })),
+  },
 ];
