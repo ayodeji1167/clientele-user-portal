@@ -85,6 +85,21 @@ export const buttonRecipe = defineRecipe({
           _hover: { bg: "bg.secondary" },
         },
       },
+      // Low-emphasis filled button (top bar "Inquiry form", "Upgrade plan").
+      muted: {
+        bg: "westar.50",
+        color: "text.secondary",
+        borderWidth: "1px",
+        borderColor: "westar.100",
+        fontWeight: "500",
+        _hover: { bg: "westar.100" },
+        _active: { bg: "westar.200" },
+        _focusVisible: { boxShadow: "ring.focusNeutral", outline: "none" },
+        _disabled: {
+          color: "neutral.400",
+          _hover: { bg: "westar.50" },
+        },
+      },
     },
     size: {
       xs: { h: "32px", px: "8px", py: "0", fontSize: "13px" },

@@ -46,8 +46,7 @@ export function OtpInput({
             borderColor="neutral.300"
             borderRadius="8px"
             textAlign="center"
-            fontSize="40px"
-            fontWeight="300"
+            textStyle="h2"
             color="text.primary"
             focusVisibleRing="none"
             _placeholder={{ color: "neutral.300" }}

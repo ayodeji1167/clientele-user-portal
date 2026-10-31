@@ -7,7 +7,7 @@ export const fonts = {
   heading: { value: `'Overused Grotesk', system-ui, sans-serif` },
   body: { value: `'Overused Grotesk', system-ui, sans-serif` },
   display: {
-    value: `'Benton Modern Display', Georgia, 'Times New Roman', serif`,
+    value: `'BentonModDisp', 'Benton Modern Display', Georgia, 'Times New Roman', serif`,
   },
 };
 
@@ -30,6 +30,16 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: "display",
       fontSize: "80px",
+      fontWeight: "300",
+      lineHeight: "0.82",
+      letterSpacing: "-0.03em",
+    },
+  },
+  h2Serif: {
+    description: "Benton Modern Display H2 (50px) — page greetings",
+    value: {
+      fontFamily: "display",
+      fontSize: "50px",
       fontWeight: "300",
       lineHeight: "0.82",
       letterSpacing: "-0.03em",

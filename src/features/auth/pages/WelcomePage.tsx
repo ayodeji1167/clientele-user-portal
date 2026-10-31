@@ -42,7 +42,7 @@ export function WelcomePage() {
             justify="center"
             align="center"
             gap="0.375rem"
-            fontSize="0.875rem"
+            textStyle="p3"
             color="text.subtle"
             wrap="wrap"
             textAlign="center"

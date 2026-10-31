@@ -1,4 +1,4 @@
-import { Button, Flex, Stack } from "@chakra-ui/react";
+import { Button, Flex, Stack, Text } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FormField, PasswordInput, TextInput } from "@/components/input";
@@ -97,7 +97,7 @@ export function LoginPage() {
               to={RouteConstants.auth.secureLink.path}
               state={location.state}
             >
-              Sign in with a secure link
+              <Text textStyle={"p2"}>Sign in with a secure link</Text>
             </TextLink>
           </AuthPrompt>
         </Stack>

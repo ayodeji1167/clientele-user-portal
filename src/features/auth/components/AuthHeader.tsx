@@ -19,12 +19,7 @@ export function AuthHeader({ title, subtitle }: AuthHeaderProps) {
         {title}
       </Heading>
       {subtitle && (
-        <Text
-          fontSize="1rem"
-          lineHeight="1.125rem"
-          color="text.muted"
-          pb="0.25rem"
-        >
+        <Text textStyle="p2" color="text.muted" pb="0.25rem">
           {subtitle}
         </Text>
       )}
