@@ -90,4 +90,46 @@ export const OnboardingRouteList: RouteObject[] = [
         Component: m.WelcomePage,
       })),
   },
+  {
+    path: onboarding.start.path,
+    lazy: () =>
+      import("../pages/OnboardingStartPage").then((m) => ({
+        Component: m.OnboardingStartPage,
+      })),
+  },
+  {
+    path: onboarding.industry.path,
+    lazy: () =>
+      import("../pages/OnboardingIndustryPage").then((m) => ({
+        Component: m.OnboardingIndustryPage,
+      })),
+  },
+  {
+    path: onboarding.services.path,
+    lazy: () =>
+      import("../pages/OnboardingServicesPage").then((m) => ({
+        Component: m.OnboardingServicesPage,
+      })),
+  },
+  {
+    path: onboarding.payment.path,
+    lazy: () =>
+      import("../pages/OnboardingPaymentPage").then((m) => ({
+        Component: m.OnboardingPaymentPage,
+      })),
+  },
+  {
+    path: onboarding.studio.path,
+    lazy: () =>
+      import("../pages/OnboardingStudioPage").then((m) => ({
+        Component: m.OnboardingStudioPage,
+      })),
+  },
+  {
+    path: onboarding.business.path,
+    lazy: () =>
+      import("../pages/OnboardingBusinessPage").then((m) => ({
+        Component: m.OnboardingBusinessPage,
+      })),
+  },
 ];
