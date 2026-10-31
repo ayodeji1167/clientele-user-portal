@@ -19,7 +19,7 @@ export function AuthPromptLine({
   children: ReactNode;
 }) {
   return (
-    <Text color="text.muted" textAlign="center">
+    <Text textStyle={"p2"} color="text.muted" textAlign="center">
       {question}&nbsp; {children}
     </Text>
   );

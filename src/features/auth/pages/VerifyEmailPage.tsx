@@ -44,7 +44,7 @@ export function VerifyEmailPage() {
   };
 
   return (
-    <AuthLayout centered>
+    <AuthLayout>
       <Stack gap="2rem">
         <AuthHeader
           title="Verify your email"
