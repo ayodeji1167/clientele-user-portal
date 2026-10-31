@@ -21,9 +21,6 @@ export function AppLayout({ children }: { children: ReactNode }) {
             w="full"
             maxW={{ base: LAPTOP_CONTENT_MAX_W, "2xl": WIDE_CONTENT_MAX_W }}
             mx={{ base: "0", "2xl": "auto" }}
-            px={{ base: "1rem", md: "2.5rem" }}
-            pt={{ base: "1rem", md: "1.5rem" }}
-            pb="4rem"
           >
             <Suspense
               fallback={

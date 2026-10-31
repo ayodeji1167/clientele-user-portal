@@ -40,6 +40,13 @@ export const DashboardRouteList: RouteObject[] = [
         Component: m.OverviewPage,
       })),
   },
+  {
+    path: RouteConstants.notifications.base.path,
+    lazy: () =>
+      import("@/features/notifications/pages/NotificationsPage").then((m) => ({
+        Component: m.NotificationsPage,
+      })),
+  },
   ...placeholders.map(([path, title]) => ({
     path,
     element: <ComingSoon title={title} />,

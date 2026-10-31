@@ -4,8 +4,9 @@ import { Children, Fragment, type ReactNode } from "react";
 /** Inline items separated by small grey dots: "5 files • 2 links • 3". */
 export function MetaLine({
   children,
+  dotColor = "neutral.300",
   ...rest
-}: FlexProps & { children: ReactNode }) {
+}: FlexProps & { children: ReactNode; dotColor?: string }) {
   const items = Children.toArray(children).filter(Boolean);
 
   return (
@@ -18,7 +19,7 @@ export function MetaLine({
               aria-hidden
               boxSize="0.1875rem"
               borderRadius="full"
-              bg="neutral.300"
+              bg={dotColor}
               flexShrink={0}
             />
           )}

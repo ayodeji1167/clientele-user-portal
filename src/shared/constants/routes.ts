@@ -53,8 +53,13 @@ const templates = {
   base: defineRoute("/templates" as const),
 } as const;
 
+const notifications = {
+  base: defineRoute("/notifications" as const),
+} as const;
+
 const settings = {
   base: defineRoute("/settings" as const),
+  // Notification preferences; the notification feed is notifications.base.
   notifications: defineRoute("/settings/notifications" as const),
   subscription: defineRoute("/settings/subscription" as const),
 } as const;
@@ -72,6 +77,7 @@ export const RouteConstants = {
   calendar,
   earnings,
   templates,
+  notifications,
   settings,
   workspaces,
 } as const;

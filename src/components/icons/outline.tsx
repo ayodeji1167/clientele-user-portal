@@ -116,6 +116,15 @@ export function ChevronDownIcon(props: IconProps) {
   );
 }
 
+export function SearchIcon(props: IconProps) {
+  return (
+    <OutlineIcon {...props}>
+      <circle cx="11" cy="11" r="7.25" />
+      <path d="m20.5 20.5-4.35-4.35" />
+    </OutlineIcon>
+  );
+}
+
 export function CloseIcon(props: IconProps) {
   return (
     <OutlineIcon {...props}>

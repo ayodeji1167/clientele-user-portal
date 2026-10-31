@@ -100,7 +100,7 @@ export function ProfileMenu({ workspace, children }: ProfileMenuProps) {
 
             <Menu.Separator borderColor="border.secondary" mx="0.5rem" />
             <Menu.Item
-              value={RouteConstants.settings.notifications.path}
+              value={RouteConstants.notifications.base.path}
               {...itemStyles}
             >
               <WithUnreadDot show={unread.notifications > 0}>

@@ -1,4 +1,9 @@
-import { DatePicker, parseDate, Portal } from "@chakra-ui/react";
+import {
+  DatePicker,
+  parseDate,
+  Portal,
+  type SystemStyleObject,
+} from "@chakra-ui/react";
 import { CalendarIcon } from "@/components/icons";
 import { fieldSurface } from "./styles";
 
@@ -12,6 +17,11 @@ type DateInputProps = {
   invalid?: boolean;
   disabled?: boolean;
   portalled?: boolean;
+  placeholder?: string;
+  /** Field height; defaults to the form size. */
+  h?: string;
+  /** Overrides merged into the field surface (e.g. text style). */
+  inputCss?: SystemStyleObject;
 };
 
 /** Day/month/year field (DD/MM/YYYY) with a calendar popover. */
@@ -23,6 +33,9 @@ export function DateInput({
   invalid,
   disabled,
   portalled = true,
+  placeholder = "DD/MM/YYYY",
+  h = "2.5rem",
+  inputCss,
 }: DateInputProps) {
   const content = (
     <DatePicker.Positioner>
@@ -56,11 +69,11 @@ export function DateInput({
     >
       <DatePicker.Control position="relative">
         <DatePicker.Input
-          placeholder="DD/MM/YYYY"
-          h="2.5rem"
+          placeholder={placeholder}
+          h={h}
           px="0.75rem"
           pe="2.75rem"
-          css={fieldSurface}
+          css={{ ...fieldSurface, ...inputCss }}
         />
         <DatePicker.IndicatorGroup
           position="absolute"

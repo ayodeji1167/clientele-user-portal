@@ -15,4 +15,8 @@ export const queryKey = {
     meetings: "overview-meetings",
     activity: "overview-activity",
   },
+  notifications: {
+    list: "notifications-list",
+    counts: "notifications-counts",
+  },
 };
