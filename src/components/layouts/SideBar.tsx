@@ -42,6 +42,11 @@ export function SideBar({ onNavigate }: SideBarProps) {
       borderRightWidth="0.0625rem"
       borderColor="border.secondary"
       overflowY="auto"
+      overscrollBehavior="contain"
+      css={{
+        scrollbarWidth: "none",
+        "&::-webkit-scrollbar": { display: "none" },
+      }}
       pt="1.75rem"
       pb="1rem"
     >
@@ -194,7 +199,7 @@ export function SideBar({ onNavigate }: SideBarProps) {
         </Stack>
       )}
 
-      <Box mt="auto" pt="2rem" px="1rem">
+      <Box mt="5.5rem" pt="0" px="1rem">
         {workspace && <PlanCard plan={workspace.plan} />}
       </Box>
     </Flex>

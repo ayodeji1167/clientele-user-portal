@@ -1,5 +1,6 @@
 import { Box, Drawer, Flex, Portal, Spinner } from "@chakra-ui/react";
 import { Suspense, useState, type ReactNode } from "react";
+import { LAPTOP_CONTENT_MAX_W, WIDE_CONTENT_MAX_W } from "./constants";
 import { NavBar } from "./NavBar";
 import { SideBar } from "./SideBar";
 
@@ -17,7 +18,9 @@ export function AppLayout({ children }: { children: ReactNode }) {
         <NavBar onMenuOpen={() => setMobileNavOpen(true)} />
         <Box as="main" flex="1" overflowY="auto" overscrollBehavior="contain">
           <Box
-            maxW="71.875rem"
+            w="full"
+            maxW={{ base: LAPTOP_CONTENT_MAX_W, "2xl": WIDE_CONTENT_MAX_W }}
+            mx={{ base: "0", "2xl": "auto" }}
             px={{ base: "1rem", md: "2.5rem" }}
             pt={{ base: "1rem", md: "1.5rem" }}
             pb="4rem"

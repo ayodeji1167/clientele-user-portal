@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoUrl from "@/assets/logo.svg";
 import { DocumentIcon, MenuIcon, PlusCircleIcon } from "@/components/icons";
 import { RouteConstants } from "@/shared/constants/routes";
+import { WIDE_CONTENT_MAX_W } from "./constants";
 
 const actionStyles = {
   h: "2.0625rem",
@@ -18,7 +19,10 @@ export function NavBar({ onMenuOpen }: { onMenuOpen: () => void }) {
       gap="0.5rem"
       h="3.5rem"
       flexShrink={0}
-      px={{ base: "1rem", md: "1.5rem" }}
+      w="full"
+      maxW={{ base: "none", "2xl": WIDE_CONTENT_MAX_W }}
+      mx={{ base: "0", "2xl": "auto" }}
+      px={{ base: "1rem", md: "1.5rem", "2xl": "2.5rem" }}
     >
       <Flex align="center" gap="0.75rem" display={{ base: "flex", lg: "none" }}>
         <chakra.button
